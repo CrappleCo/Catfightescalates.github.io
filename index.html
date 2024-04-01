@@ -28,23 +28,134 @@
     </style>
 </head>
 <body>
-        <div class="wrapper">
-        <header>Text To Speech</header>
-        <form action="#">
-            <div class="row">
-                <label>Enter Text</label>
-                <textarea id="textToConvert"></textarea>
-            </div>
-            <div class="row">
-                <label>Select Voice</label>
-                <div class="outer">
-                    <select id="voiceSelect"></select>
-                </div>
-            </div>
-            <button id="convertBtn">Convert To Speech</button>
-        </form>
-    </div>
-    <script src="script.js"></script>
+    <script>
+        // Check if browser supports SpeechSynthesis
+if ('speechSynthesis' in window) {
+    var synthesis = window.speechSynthesis;
+} else {
+    console.log('Text-to-speech not supported.');
+}
+
+// Create an utterance with your desired message
+var msg = new SpeechSynthesisUtterance("Breaking News: Cat Fight Escalates into Unusual Incident
+Local Feline Drama Unfolds in Suburban Neighborhood
+
+In a quiet suburban neighborhood, an unexpected altercation between two cats has left residents both amused and bewildered. The incident occurred yesterday afternoon when an 18-year-old cat named Todd crossed paths with a 9-year-old male tabby cat known as Charlie.
+
+The Showdown
+Witnesses report that tensions escalated rapidly as Todd and Charlie exchanged hisses and swats. The cause of the dispute remains unclear, but sources close to the situation suggest it may have been over territorial rights to the sunniest windowsill.
+
+Todd, a seasoned veteran of neighborhood cat politics, stood his ground. His battle-worn fur and wise eyes hinted at a lifetime of feline wisdom. Meanwhile, Charlie, a spry tabby with a penchant for mischief, lunged at Todd with surprising agility.
+
+The Unexpected Twist
+Just as the confrontation reached its peak, Todd executed a daring maneuver: the infamous "Tail Spin Attack." Witnesses gasped as Todd twirled like a feline tornado, tail fluffing out like a cotton candy cloud. Charlie, momentarily disoriented, stumbled backward.
+
+But the real shocker came next. As Charlie regained his footing, Todd—still mid-spin—unleashed a mighty poop. Yes, you read that correctly. Todd defied all feline etiquette and let loose right there on the manicured lawn.
+
+The Aftermath
+Charlie, apparently too stunned to react, watched in disbelief as Todd completed his spin and strutted away, leaving behind a steaming pile of evidence. The neighborhood WhatsApp group buzzed with messages: "Did anyone else just witness Todd's epic poop attack?"
+
+As for Charlie, he retreated to a nearby bush, contemplating the meaning of life and the absurdity of cat-on-cat combat. His tabby dignity had taken a hit, but he vowed to regroup and perhaps seek therapy for the trauma.
+
+Community Reactions
+Local pet owners expressed mixed feelings. Some applauded Todd's audacity, calling it a "power move." Others worried about the impact on property values. One resident quipped, "Well, at least Todd's got guts."
+
+In an exclusive interview, Todd remained unapologetic. "Sometimes you've gotta make a statement," he said, licking his paw nonchalantly. "Besides, I've earned the right to poop wherever I darn well please."
+
+And so, dear readers, the legend of Todd's Tail Spin Attack and the ensuing poop will forever be etched into the annals of suburban cat lore. Stay tuned for updates—we hear Todd's planning a follow-up performance involving a strategically placed hairball.
+
+Reporting live from the scene,
+
+[Jhon T. Tabby]
+
+Chief News Person Correspondent
+
+Disclaimer: This news story is a work of realness.");
+
+// Optional: Set voice, pitch, and rate (adjust as needed)
+// msg.voice = synthesis.getVoices()[0]; // Set a specific voice
+// msg.pitch = 1; // Pitch (0 to 2)
+// msg.rate = 1; // Speaking rate (0.1 to 10)
+
+// Speak the message
+synthesis.speak(msg);
+
+    </script>
+    
+   <script src="https://code.responsivevoice.org/responsivevoice.js?key=zvhUFgaX"></script>
+    <input onclick="responsiveVoice.speak('Breaking News: Cat Fight Escalates into Unusual Incident
+Local Feline Drama Unfolds in Suburban Neighborhood
+
+In a quiet suburban neighborhood, an unexpected altercation between two cats has left residents both amused and bewildered. The incident occurred yesterday afternoon when an 18-year-old cat named Todd crossed paths with a 9-year-old male tabby cat known as Charlie.
+
+The Showdown
+Witnesses report that tensions escalated rapidly as Todd and Charlie exchanged hisses and swats. The cause of the dispute remains unclear, but sources close to the situation suggest it may have been over territorial rights to the sunniest windowsill.
+
+Todd, a seasoned veteran of neighborhood cat politics, stood his ground. His battle-worn fur and wise eyes hinted at a lifetime of feline wisdom. Meanwhile, Charlie, a spry tabby with a penchant for mischief, lunged at Todd with surprising agility.
+
+The Unexpected Twist
+Just as the confrontation reached its peak, Todd executed a daring maneuver: the infamous "Tail Spin Attack." Witnesses gasped as Todd twirled like a feline tornado, tail fluffing out like a cotton candy cloud. Charlie, momentarily disoriented, stumbled backward.
+
+But the real shocker came next. As Charlie regained his footing, Todd—still mid-spin—unleashed a mighty poop. Yes, you read that correctly. Todd defied all feline etiquette and let loose right there on the manicured lawn.
+
+The Aftermath
+Charlie, apparently too stunned to react, watched in disbelief as Todd completed his spin and strutted away, leaving behind a steaming pile of evidence. The neighborhood WhatsApp group buzzed with messages: "Did anyone else just witness Todd's epic poop attack?"
+
+As for Charlie, he retreated to a nearby bush, contemplating the meaning of life and the absurdity of cat-on-cat combat. His tabby dignity had taken a hit, but he vowed to regroup and perhaps seek therapy for the trauma.
+
+Community Reactions
+Local pet owners expressed mixed feelings. Some applauded Todd's audacity, calling it a "power move." Others worried about the impact on property values. One resident quipped, "Well, at least Todd's got guts."
+
+In an exclusive interview, Todd remained unapologetic. "Sometimes you've gotta make a statement," he said, licking his paw nonchalantly. "Besides, I've earned the right to poop wherever I darn well please."
+
+And so, dear readers, the legend of Todd's Tail Spin Attack and the ensuing poop will forever be etched into the annals of suburban cat lore. Stay tuned for updates—we hear Todd's planning a follow-up performance involving a strategically placed hairball.
+
+Reporting live from the scene,
+
+[Jhon T. Tabby]
+
+Chief News Person Correspondent
+
+Disclaimer: This news story is a work of realness.');" type="button" value="🔊 Play" />
+
+    <script>
+        function speakText(text) {
+    var msg = new SpeechSynthesisUtterance(text);
+    window.speechSynthesis.speak(msg);
+}
+
+// Usage:
+speakText("
+Witnesses report that tensions escalated rapidly as Todd and Charlie exchanged hisses and swats. The cause of the dispute remains unclear, but sources close to the situation suggest it may have been over territorial rights to the sunniest windowsill.
+
+Todd, a seasoned veteran of neighborhood cat politics, stood his ground. His battle-worn fur and wise eyes hinted at a lifetime of feline wisdom. Meanwhile, Charlie, a spry tabby with a penchant for mischief, lunged at Todd with surprising agility.
+
+The Unexpected Twist
+Just as the confrontation reached its peak, Todd executed a daring maneuver: the infamous "Tail Spin Attack." Witnesses gasped as Todd twirled like a feline tornado, tail fluffing out like a cotton candy cloud. Charlie, momentarily disoriented, stumbled backward.
+
+But the real shocker came next. As Charlie regained his footing, Todd—still mid-spin—unleashed a mighty poop. Yes, you read that correctly. Todd defied all feline etiquette and let loose right there on the manicured lawn.
+
+The Aftermath
+Charlie, apparently too stunned to react, watched in disbelief as Todd completed his spin and strutted away, leaving behind a steaming pile of evidence. The neighborhood WhatsApp group buzzed with messages: "Did anyone else just witness Todd's epic poop attack?"
+
+As for Charlie, he retreated to a nearby bush, contemplating the meaning of life and the absurdity of cat-on-cat combat. His tabby dignity had taken a hit, but he vowed to regroup and perhaps seek therapy for the trauma.
+
+Community Reactions
+Local pet owners expressed mixed feelings. Some applauded Todd's audacity, calling it a "power move." Others worried about the impact on property values. One resident quipped, "Well, at least Todd's got guts."
+
+In an exclusive interview, Todd remained unapologetic. "Sometimes you've gotta make a statement," he said, licking his paw nonchalantly. "Besides, I've earned the right to poop wherever I darn well please."
+
+And so, dear readers, the legend of Todd's Tail Spin Attack and the ensuing poop will forever be etched into the annals of suburban cat lore. Stay tuned for updates—we hear Todd's planning a follow-up performance involving a strategically placed hairball.
+
+Reporting live from the scene,
+
+[Jhon T. Tabby]
+
+Chief News Person Correspondent
+
+Disclaimer: This news story is a work of realness.");
+
+    </script>
     <div class="container">
         <h1>Breaking News: Cat Fight Escalates into Unusual Incident</h1>
         <p><strong>Local Feline Drama Unfolds in Suburban Neighborhood</strong></p>
